@@ -126,25 +126,26 @@ int main() {
                 break;
             case 5:
 
-    printf("\nEnter Student ID to delete: ");
+                printf("\nEnter Student ID to delete: ");
 
-    scanf("%d", &searchID);
+                scanf("%d", &searchID);
 
-    found = 0;
+                found = 0;
 
-    for(int i = 0; i < count; i++) {
+                for(int i = 0; i < count; i++) {
 
-        if(students[i].id == searchID) {
+                    if(students[i].id == searchID) {
 
-            for(int j = i; j < count - 1; j++) {
+                    for(int j = i; j < count - 1; j++) {
 
-                students[j] = students[j + 1];
+                        students[j] = students[j + 1];
 
             }
 
             count--;
+                        saveStudents(students, count);
 
-            printf("Student deleted successfully!\n");
+                        printf("Student deleted successfully!\n");
 
             found = 1;
 
