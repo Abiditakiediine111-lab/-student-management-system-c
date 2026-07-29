@@ -26,6 +26,7 @@ int main() {
         printf("2. Display Students\n");
         printf("3. Search Student\n");
         printf("4. Update Student\n");
+        printf("5. Delete Student\n");
         printf("0. Exit\n");
 
         printf("Enter your choice: ");
@@ -116,8 +117,41 @@ int main() {
                     printf("Student not found!\n");
 
                 break;
+            case 5:
 
+    printf("\nEnter Student ID to delete: ");
 
+    scanf("%d", &searchID);
+
+    found = 0;
+
+    for(int i = 0; i < count; i++) {
+
+        if(students[i].id == searchID) {
+
+            for(int j = i; j < count - 1; j++) {
+
+                students[j] = students[j + 1];
+
+            }
+
+            count--;
+
+            printf("Student deleted successfully!\n");
+
+            found = 1;
+
+            break;
+
+        }
+
+    }
+
+    if(found == 0)
+
+        printf("Student not found!\n");
+
+    break;
             case 0:
                 printf("Goodbye!\n");
                 break;
