@@ -8,7 +8,8 @@ struct Student {
     char name[50];
     float average;
 };
-
+void saveStudents(struct Student students[], int count);
+void loadStudents(struct Student students[], int *count);
 int main() {
 
     struct Student students[MAX_STUDENTS];
