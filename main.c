@@ -25,6 +25,7 @@ int main() {
         printf("1. Add Student\n");
         printf("2. Display Students\n");
         printf("3. Search Student\n");
+        printf("4. Update Student\n");
         printf("0. Exit\n");
 
         printf("Enter your choice: ");
@@ -52,23 +53,19 @@ int main() {
 
 
             case 2:
-                printf("\n------ Students List ------\n");
+                for(int i = 0; i < count; i++) {
 
-                if(count == 0) {
-                    printf("No students available.\n");
-                }
-                else {
-                    for(int i = 0; i < count; i++) {
-                        printf("\nID: %d\n", students[i].id);
-                        printf("Name: %s\n", students[i].name);
-                        printf("Average: %.2f\n", students[i].average);
-                    }
+                    printf("\nStudent %d\n", i+1);
+                    printf("ID: %d\n", students[i].id);
+                    printf("Name: %s\n", students[i].name);
+                    printf("Average: %.2f\n", students[i].average);
+
                 }
                 break;
 
 
             case 3:
-                printf("\nEnter Student ID to search: ");
+                printf("\nEnter Student ID: ");
                 scanf("%d", &searchID);
 
                 found = 0;
@@ -77,8 +74,7 @@ int main() {
 
                     if(students[i].id == searchID) {
 
-                        printf("\nStudent Found!\n");
-                        printf("ID: %d\n", students[i].id);
+                        printf("\nStudent Found\n");
                         printf("Name: %s\n", students[i].name);
                         printf("Average: %.2f\n", students[i].average);
 
@@ -87,9 +83,37 @@ int main() {
                     }
                 }
 
-                if(found == 0) {
+                if(found == 0)
                     printf("Student not found!\n");
+
+                break;
+
+
+            case 4:
+                printf("\nEnter Student ID to update: ");
+                scanf("%d", &searchID);
+
+                found = 0;
+
+                for(int i = 0; i < count; i++) {
+
+                    if(students[i].id == searchID) {
+
+                        printf("New name: ");
+                        scanf("%s", students[i].name);
+
+                        printf("New average: ");
+                        scanf("%f", &students[i].average);
+
+                        printf("Student updated successfully!\n");
+
+                        found = 1;
+                        break;
+                    }
                 }
+
+                if(found == 0)
+                    printf("Student not found!\n");
 
                 break;
 
