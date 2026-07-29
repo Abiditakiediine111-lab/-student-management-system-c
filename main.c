@@ -16,7 +16,7 @@ int main() {
     int choice;
     int count = 0;
 
-loadStudents(students, &count);
+    loadStudents(students, &count);
     int searchID;
     int found;
 
@@ -51,6 +51,8 @@ loadStudents(students, &count);
                     scanf("%f", &students[count].average);
 
                     count++;
+
+                    saveStudents(students, count);
 
                     printf("Student added successfully!\n");
                 }
