@@ -168,3 +168,19 @@ int main() {
 
     return 0;
 }
+void saveStudents(struct Student students[], int count)
+{
+    FILE *file;
+
+    file = fopen("students.dat", "w");
+
+    if(file == NULL)
+    {
+        printf("Error opening file!\n");
+        return;
+    }
+
+    fwrite(students, sizeof(struct Student), count, file);
+
+    fclose(file);
+}
