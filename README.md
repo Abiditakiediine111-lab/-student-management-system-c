@@ -5,6 +5,10 @@ A simple Student Management System developed in C language.
 
 This project allows users to manage student information with file storage.
 
+## Screenshot
+
+![Student Management System](student_management.png)
+
 ## Features
 
 - Add a student
