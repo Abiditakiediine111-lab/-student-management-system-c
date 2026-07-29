@@ -111,6 +111,7 @@ int main() {
 
                         printf("New average: ");
                         scanf("%f", &students[i].average);
+                        saveStudents(students, count);
 
                         printf("Student updated successfully!\n");
 
