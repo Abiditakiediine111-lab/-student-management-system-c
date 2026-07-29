@@ -184,3 +184,19 @@ void saveStudents(struct Student students[], int count)
 
     fclose(file);
 }
+void loadStudents(struct Student students[], int *count)
+{
+    FILE *file;
+
+    file = fopen("students.dat", "r");
+
+    if(file == NULL)
+    {
+        return;
+    }
+
+    *count = fread(students, sizeof(struct Student), MAX_STUDENTS, file);
+
+    fclose(file);
+}
+Add load students function
