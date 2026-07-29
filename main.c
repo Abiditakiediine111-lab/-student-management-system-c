@@ -13,14 +13,18 @@ int main() {
     struct Student students[MAX_STUDENTS];
     int choice;
     int count = 0;
+    int searchID;
+    int found;
 
     do {
+
         printf("\n==============================\n");
         printf(" Student Management System\n");
         printf("==============================\n");
 
         printf("1. Add Student\n");
         printf("2. Display Students\n");
+        printf("3. Search Student\n");
         printf("0. Exit\n");
 
         printf("Enter your choice: ");
@@ -44,9 +48,6 @@ int main() {
 
                     printf("Student added successfully!\n");
                 }
-                else {
-                    printf("Maximum number of students reached!\n");
-                }
                 break;
 
 
@@ -58,12 +59,38 @@ int main() {
                 }
                 else {
                     for(int i = 0; i < count; i++) {
-                        printf("\nStudent %d\n", i+1);
-                        printf("ID: %d\n", students[i].id);
+                        printf("\nID: %d\n", students[i].id);
                         printf("Name: %s\n", students[i].name);
                         printf("Average: %.2f\n", students[i].average);
                     }
                 }
+                break;
+
+
+            case 3:
+                printf("\nEnter Student ID to search: ");
+                scanf("%d", &searchID);
+
+                found = 0;
+
+                for(int i = 0; i < count; i++) {
+
+                    if(students[i].id == searchID) {
+
+                        printf("\nStudent Found!\n");
+                        printf("ID: %d\n", students[i].id);
+                        printf("Name: %s\n", students[i].name);
+                        printf("Average: %.2f\n", students[i].average);
+
+                        found = 1;
+                        break;
+                    }
+                }
+
+                if(found == 0) {
+                    printf("Student not found!\n");
+                }
+
                 break;
 
 
