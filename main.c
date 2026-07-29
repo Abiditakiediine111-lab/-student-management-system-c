@@ -15,6 +15,8 @@ int main() {
     struct Student students[MAX_STUDENTS];
     int choice;
     int count = 0;
+
+loadStudents(students, &count);
     int searchID;
     int found;
 
