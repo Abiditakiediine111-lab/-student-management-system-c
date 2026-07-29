@@ -7,7 +7,7 @@ This project allows users to manage student information with file storage.
 
 ## Screenshot
 
-![Student Management System](student_management.png)
+![Student Management System](9B2E9F9D-95DE-46A9-BEAA-2539F50FA642.png)
 
 ## Features
 
